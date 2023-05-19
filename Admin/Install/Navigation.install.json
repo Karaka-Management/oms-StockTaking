@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1006701001,
+        "pid": "/",
+        "type": 2,
+        "subtype": 1,
+        "name": "Budgeting",
+        "uri": "{/prefix}warehouse/stocktaking/list?{?}",
+        "target": "self",
+        "icon": null,
+        "order": 1,
+        "from": "StockTaking",
+        "permission": { "permission": 2, "type": null, "element": null },
+        "parent": 1001301001,
+        "children": [
+            {
+                "id": 1006702001,
+                "pid": "/warehouse/stocktaking",
+                "type": 3,
+                "subtype": 1,
+                "name": "Dashboard",
+                "uri": "{/prefix}warehouse/stocktaking/list?{?}",
+                "target": "self",
+                "icon": null,
+                "order": 1,
+                "from": "StockTaking",
+                "permission": { "permission": 2, "type": null, "element": null },
+                "parent": 1006701001,
+                "children": []
+            }
+        ]
+    }
+]
