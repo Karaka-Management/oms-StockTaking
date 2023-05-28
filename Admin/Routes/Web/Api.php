@@ -8,23 +8,23 @@ use phpOMS\Router\RouteVerb;
 return [
     '^.*/warehouse/stocktaking$' => [
         [
-            'dest' => '\Modules\StockTaking\Controller\ApiController:apiStockTakingCreate',
-            'verb' => RouteVerb::PUT,
+            'dest'       => '\Modules\StockTaking\Controller\ApiController:apiStockTakingCreate',
+            'verb'       => RouteVerb::PUT,
             'permission' => [
                 'module' => ApiController::MODULE_NAME,
-                'type'  => PermissionType::READ,
-                'state' => PermissionState::STOCK_TAKING_ADMINISTRATION,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::STOCK_TAKING_ADMINISTRATION,
             ],
         ],
     ],
     '^.*/warehouse/stocktaking/entry$' => [
         [
-            'dest' => '\Modules\StockTaking\Controller\ApiController:apiStockTakingEntryCreate',
-            'verb' => RouteVerb::SET,
+            'dest'       => '\Modules\StockTaking\Controller\ApiController:apiStockTakingEntryCreate',
+            'verb'       => RouteVerb::SET,
             'permission' => [
                 'module' => ApiController::MODULE_NAME,
-                'type'  => PermissionType::READ,
-                'state' => PermissionState::STOCK_TAKING_ADMINISTRATION,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::STOCK_TAKING_ADMINISTRATION,
             ],
         ],
     ],
