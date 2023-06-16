@@ -1,12 +1,12 @@
 <?php
 /**
- * Orange Management
+ * Karaka
  *
- * PHP Version 7.4
+ * PHP Version 8.1
  *
  * @package   Modules\StockTaking
  * @copyright Dennis Eichhorn
- * @license   OMS License 1.0
+ * @license   OMS License 2.0
  * @version   1.0.0
  * @link      https://orange-management.org
  */
@@ -18,7 +18,7 @@ namespace Modules\StockTaking\Controller;
  * Budgeting controller class.
  *
  * @package Modules\StockTaking
- * @license OMS License 1.0
+ * @license OMS License 2.0
  * @link    https://orange-management.org
  * @since   1.0.0
  */
