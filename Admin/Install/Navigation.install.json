@@ -4,7 +4,7 @@
         "pid": "/",
         "type": 2,
         "subtype": 1,
-        "name": "Budgeting",
+        "name": "StockTaking",
         "uri": "{/base}warehouse/stocktaking/list?{?}",
         "target": "self",
         "icon": null,
