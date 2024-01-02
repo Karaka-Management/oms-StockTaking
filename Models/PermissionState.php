@@ -17,7 +17,7 @@ namespace Modules\StockTaking\Models;
 use phpOMS\Stdlib\Base\Enum;
 
 /**
- * Permision state enum.
+ * Permission category enum.
  *
  * @package Modules\StockTaking\Models
  * @license OMS License 2.0

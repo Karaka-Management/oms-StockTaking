@@ -27,6 +27,21 @@
                 "permission": { "permission": 2, "type": null, "element": null },
                 "parent": 1006701001,
                 "children": []
+            },
+            {
+                "id": 1006703001,
+                "pid": "/warehouse/stocktaking",
+                "type": 3,
+                "subtype": 1,
+                "name": "Create",
+                "uri": "{/base}/warehouse/stocktaking/list?{?}",
+                "target": "self",
+                "icon": null,
+                "order": 1,
+                "from": "StockTaking",
+                "permission": { "permission": 2, "type": null, "element": null },
+                "parent": 1006701001,
+                "children": []
             }
         ]
     }

@@ -14,5 +14,5 @@ declare(strict_types=1);
 
 return ['Navigation' => [
     'StockTaking' => 'Inventur',
-    'Dashboard' => 'Dashboard',
+    'Dashboard'   => 'Dashboard',
 ]];

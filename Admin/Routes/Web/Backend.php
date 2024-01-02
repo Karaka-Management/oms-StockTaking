@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 use Modules\StockTaking\Controller\BackendController;
 use Modules\StockTaking\Models\PermissionState;

@@ -28,12 +28,8 @@ echo $this->data['nav']->render(); ?>
                 <thead>
                 <tr>
                     <td>
-                    <td><?= $this->getHtml('Stock'); ?>
-                    <td><?= $this->getHtml('Location'); ?>
-                    <td><?= $this->getHtml('No'); ?>
-                    <td class="wf-100"><?= $this->getHtml('Item'); ?>
-                    <td><?= $this->getHtml('Quantity'); ?>
-                    <td><?= $this->getHtml('Stock'); ?>
+                    <td class="wf-100"><?= $this->getHtml('Date'); ?>
+                    <td><?= $this->getHtml('Status'); ?>
                 <tbody>
                 <?php
                     $count = 0;
@@ -43,13 +39,11 @@ echo $this->data['nav']->render(); ?>
                 ?>
                 <tr data-href="<?= $url; ?>">
                     <td>
-                    <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml((string) $value->id); ?></a>
-                    <td data-label="<?= $this->getHtml('Status'); ?>"><a href="<?= $url; ?>"><?= $this->getHtml(':status' . $value->status); ?></a>
-                    <td data-label="<?= $this->getHtml('Name'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->name); ?></a>
-                    <td data-label="<?= $this->getHtml('Type'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml($value->type->getL11n()); ?></a>
+                    <td data-label="<?= $this->getHtml('Date', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml((string) $value->id); ?></a>
+                    <td>
                 <?php endforeach; ?>
                 <?php if ($count === 0) : ?>
-                    <tr><td colspan="8" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
+                    <tr><td colspan="3" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
                 <?php endif; ?>
             </table>
             </div>
