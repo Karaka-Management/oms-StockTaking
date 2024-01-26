@@ -39,7 +39,7 @@ echo $this->data['nav']->render(); ?>
                     $count = 0;
                     foreach ($assets as $key => $value) :
                         ++$count;
-                        $url = UriFactory::build('{/base}/accounting/asset/profile?{?}&id=' . $value->id);
+                        $url = UriFactory::build('{/base}/accounting/asset/view?{?}&id=' . $value->id);
                 ?>
                 <tr data-href="<?= $url; ?>">
                     <td>
