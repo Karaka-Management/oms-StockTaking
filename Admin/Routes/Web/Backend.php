@@ -7,7 +7,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/warehouse/stocktaking/list(\?.*$|$)' => [
+    '^/warehouse/stocktaking/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingList',
             'verb'       => RouteVerb::GET,
@@ -18,7 +18,7 @@ return [
             ],
         ],
     ],
-    '^.*/warehouse/stocktaking/overview(\?.*$|$)' => [
+    '^/warehouse/stocktaking/overview(\?.*$|$)' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingOverview',
             'verb'       => RouteVerb::GET,
@@ -29,7 +29,7 @@ return [
             ],
         ],
     ],
-    '^.*/warehouse/stocktaking/area(\?.*$|$)' => [
+    '^/warehouse/stocktaking/area(\?.*$|$)' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingArea',
             'verb'       => RouteVerb::GET,
@@ -40,7 +40,7 @@ return [
             ],
         ],
     ],
-    '^.*/warehouse/stocktaking/entry(\?.*$|$)' => [
+    '^/warehouse/stocktaking/entry(\?.*$|$)' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingEntry',
             'verb'       => RouteVerb::GET,
@@ -51,7 +51,7 @@ return [
             ],
         ],
     ],
-    '^.*/warehouse/stocktaking/stats(\?.*$|$)' => [
+    '^/warehouse/stocktaking/stats(\?.*$|$)' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingStats',
             'verb'       => RouteVerb::GET,
