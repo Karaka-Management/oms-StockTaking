@@ -39,7 +39,7 @@ echo $this->data['nav']->render(); ?>
                 ?>
                 <tr data-href="<?= $url; ?>">
                     <td>
-                    <td data-label="<?= $this->getHtml('Date', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $this->printHtml((string) $value->id); ?></a>
+                    <td data-label="<?= $this->getHtml('Date', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
                     <td>
                 <?php endforeach; ?>
                 <?php if ($count === 0) : ?>

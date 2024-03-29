@@ -10,6 +10,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\ApiController:apiStockTakingCreate',
             'verb'       => RouteVerb::PUT,
+            'csrf'       => true,
             'permission' => [
                 'module' => ApiController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -21,6 +22,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\ApiController:apiStockTakingEntryCreate',
             'verb'       => RouteVerb::SET,
+            'csrf'       => true,
             'permission' => [
                 'module' => ApiController::MODULE_NAME,
                 'type'   => PermissionType::READ,
