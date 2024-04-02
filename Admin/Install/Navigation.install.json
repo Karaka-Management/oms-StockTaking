@@ -34,7 +34,7 @@
                 "type": 3,
                 "subtype": 1,
                 "name": "Create",
-                "uri": "{/base}/warehouse/stocktaking/list?{?}",
+                "uri": "{/base}/warehouse/stocktaking/create?{?}",
                 "target": "self",
                 "icon": null,
                 "order": 1,

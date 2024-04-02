@@ -1,0 +1,139 @@
+{
+    "stocktaking": {
+        "name": "stocktaking",
+        "fields": {
+            "stocktaking_id": {
+                "name": "stocktaking_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "stocktaking_unit": {
+                "name": "stocktaking_unit",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "organization_unit",
+                "foreignKey": "organization_unit_id"
+            },
+            "stocktaking_created_at": {
+                "name": "stocktaking_created_at",
+                "type": "DATETIME",
+                "null": false
+            }
+        }
+    },
+    "stocktaking_distribution": {
+        "name": "stocktaking_distribution",
+        "fields": {
+            "stocktaking_distribution_id": {
+                "name": "stocktaking_distribution_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "stocktaking_distribution_distribution": {
+                "name": "stocktaking_distribution_distribution",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "warehousemgmt_stock_distribution",
+                "foreignKey": "warehousemgmt_stock_distribution_id"
+            },
+            "stocktaking_distribution_stocktaking": {
+                "name": "stocktaking_distribution_stocktaking",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "stocktaking",
+                "foreignKey": "stocktaking_id"
+            }
+        }
+    },
+    "stocktaking_stock": {
+        "name": "stocktaking_stock",
+        "fields": {
+            "stocktaking_stock_id": {
+                "name": "stocktaking_stock_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "stocktaking_stock_stock": {
+                "name": "stocktaking_stock_stock",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "warehousemgmt_stock",
+                "foreignKey": "warehousemgmt_stock_id"
+            },
+            "stocktaking_stock_stocktaking": {
+                "name": "stocktaking_stock_stocktaking",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "stocktaking",
+                "foreignKey": "stocktaking_id"
+            }
+        }
+    },
+    "stocktaking_type": {
+        "name": "stocktaking_type",
+        "fields": {
+            "stocktaking_type_id": {
+                "name": "stocktaking_type_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "stocktaking_type_type": {
+                "name": "stocktaking_type_type",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "warehousemgmt_stock_type",
+                "foreignKey": "warehousemgmt_stock_type_id"
+            },
+            "stocktaking_type_stocktaking": {
+                "name": "stocktaking_type_stocktaking",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "stocktaking",
+                "foreignKey": "stocktaking_id"
+            }
+        }
+    },
+    "stocktaking_item": {
+        "name": "stocktaking_item",
+        "fields": {
+            "stocktaking_item_id": {
+                "name": "stocktaking_item_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "stocktaking_item_item": {
+                "name": "stocktaking_item_item",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "itemmgmt_item",
+                "foreignKey": "itemmgmt_item_id"
+            },
+            "stocktaking_item_stocktaking": {
+                "name": "stocktaking_item_stocktaking",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "stocktaking",
+                "foreignKey": "stocktaking_id"
+            }
+        }
+    }
+}

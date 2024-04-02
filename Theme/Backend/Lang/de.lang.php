@@ -14,6 +14,6 @@ declare(strict_types=1);
 
 return ['StockTaking' => [
     'Stocktaking' => 'Inventur',
-    'Date' => 'Datum',
-    'Status' => 'Status',
+    'Date'        => 'Datum',
+    'Status'      => 'Status',
 ]];

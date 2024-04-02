@@ -17,7 +17,9 @@
     "description": "Stock Taking module.",
     "directory": "StockTaking",
     "dependencies": {
-        "Controlling": "*"
+        "Controlling": "*",
+        "ItemManagement": "*",
+        "WarehouseManagement": "*"
     },
     "providing": {
         "Navigation": "*"
