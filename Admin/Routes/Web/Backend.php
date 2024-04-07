@@ -11,7 +11,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingList',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -23,7 +23,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingOverview',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -35,7 +35,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingArea',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -47,7 +47,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingEntry',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -59,7 +59,7 @@ return [
         [
             'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingStats',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
