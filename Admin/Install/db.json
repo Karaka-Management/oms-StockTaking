@@ -14,8 +14,8 @@
                 "type": "INT",
                 "null": true,
                 "default": null,
-                "foreignTable": "organization_unit",
-                "foreignKey": "organization_unit_id"
+                "foreignTable": "unit",
+                "foreignKey": "unit_id"
             },
             "stocktaking_created_at": {
                 "name": "stocktaking_created_at",
