@@ -101,10 +101,9 @@ final class ApiController extends Controller
         //      It is a little bit unfortunate that we cannot use attributes but it is what it is.
 
         // Get distributions based on type and stock filter
-        $stockTypeList = $request->getDataList('types') ?? [];
-        $stockList     = $request->getDataList('stocks') ?? [];
+        $stockTypeList = $request->getDataList('types');
+        $stockList     = $request->getDataList('stocks');
 
-        $stocks      = [];
         $stockMapper = StockMapper::getAll()
             ->with('locations')
             ->with('locations/type')
@@ -117,6 +116,9 @@ final class ApiController extends Controller
         if (!empty($stockList)) {
             $stockMapper->where('id', $stockList);
         }
+
+        /** @var \Modules\WarehouseManagement\Models\Stock[] $stocks */
+        $stocks = $stockMapper->executeGetArray();
 
         foreach ($stocks as $idx => $stock) {
             if (empty($stock->locations)) {
