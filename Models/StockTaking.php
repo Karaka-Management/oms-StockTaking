@@ -22,7 +22,7 @@ namespace Modules\StockTaking\Models;
  * @link    https://jingga.app
  * @since   1.0.0
  */
-final class StockTaking
+class StockTaking
 {
     public int $id = 0;
 
