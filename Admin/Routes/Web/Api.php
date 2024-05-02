@@ -6,7 +6,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/warehouse/stocktaking$' => [
+    '^.*/warehouse/stocktaking(\?.*|$)$' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\ApiController:apiStockTakingCreate',
             'verb'       => RouteVerb::PUT,
@@ -19,7 +19,7 @@ return [
             ],
         ],
     ],
-    '^.*/warehouse/stocktaking/entry$' => [
+    '^.*/warehouse/stocktaking/entry(\?.*|$)$' => [
         [
             'dest'       => '\Modules\StockTaking\Controller\ApiController:apiStockTakingEntryCreate',
             'verb'       => RouteVerb::SET,
