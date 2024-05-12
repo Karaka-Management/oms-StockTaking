@@ -19,9 +19,9 @@ return [
             ],
         ],
     ],
-    '^/warehouse/stocktaking/overview(\?.*$|$)' => [
+    '^/warehouse/stocktaking/view(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingOverview',
+            'dest'       => '\Modules\StockTaking\Controller\BackendController:viewStockTakingView',
             'verb'       => RouteVerb::GET,
             'active'     => true,
             'permission' => [

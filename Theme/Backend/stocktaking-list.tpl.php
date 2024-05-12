@@ -16,7 +16,7 @@ declare(strict_types=1);
 use phpOMS\Uri\UriFactory;
 
 /** @var \phpOMS\Views\View $this */
-$assets = $this->data['assets'] ?? [];
+$list = $this->data['list'] ?? [];
 
 echo $this->data['nav']->render(); ?>
 <div class="row">
@@ -27,20 +27,20 @@ echo $this->data['nav']->render(); ?>
             <table id="iSalesClientList" class="default sticky">
                 <thead>
                 <tr>
-                    <td>
-                    <td class="wf-100"><?= $this->getHtml('Date'); ?>
+                    <td><?= $this->getHtml('ID', '0', '0'); ?>
                     <td><?= $this->getHtml('Status'); ?>
+                    <td class="wf-100"><?= $this->getHtml('Date'); ?>
                 <tbody>
                 <?php
                     $count = 0;
-                    foreach ($assets as $key => $value) :
+                    foreach ($list as $key => $value) :
                         ++$count;
-                        $url = UriFactory::build('{/base}/accounting/asset/view?{?}&id=' . $value->id);
+                        $url = UriFactory::build('{/base}/warehouse/stocktaking/view?{?}&id=' . $value->id);
                 ?>
                 <tr data-href="<?= $url; ?>">
-                    <td>
-                    <td data-label="<?= $this->getHtml('Date', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
-                    <td>
+                    <td data-label="<?= $this->getHtml('ID', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->id; ?></a>
+                    <td data-label="<?= $this->getHtml('Status'); ?>"><a href="<?= $url; ?>"><?= $this->getHtml(':status-' . $value->status); ?></a>
+                    <td data-label="<?= $this->getHtml('Date', '0', '0'); ?>"><a href="<?= $url; ?>"><?= $value->createdAt->format('Y-m-d'); ?></a>
                 <?php endforeach; ?>
                 <?php if ($count === 0) : ?>
                     <tr><td colspan="3" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>

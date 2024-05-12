@@ -38,6 +38,8 @@ class StockTaking
 
     public int $unit = 0;
 
+    public int $status = StockTakingStatus::ACTIVE;
+
     /**
      * Constructor.
      *

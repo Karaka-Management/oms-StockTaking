@@ -14,7 +14,10 @@ declare(strict_types=1);
 
 namespace Modules\StockTaking\Models;
 
+use Modules\ItemManagement\Models\ItemMapper;
 use Modules\WarehouseManagement\Models\StockDistributionMapper;
+use Modules\WarehouseManagement\Models\StockMapper;
+use Modules\WarehouseManagement\Models\StockTypeMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
@@ -53,7 +56,25 @@ final class StockTakingMapper extends DataMapperFactory
             'mapper'   => StockDistributionMapper::class,
             'table'    => 'stocktaking_distribution',
             'self'     => 'stocktaking_distribution_stocktaking',
-            'external' => null,
+            'external' => 'stocktaking_distribution_distribution',
+        ],
+        'stocks' => [
+            'mapper'   => StockMapper::class,
+            'table'    => 'stocktaking_stock',
+            'self'     => 'stocktaking_stock_stocktaking',
+            'external' => 'stocktaking_stock_stock',
+        ],
+        'types' => [
+            'mapper'   => StockTypeMapper::class,
+            'table'    => 'stocktaking_type',
+            'self'     => 'stocktaking_type_stocktaking',
+            'external' => 'stocktaking_type_type',
+        ],
+        'items' => [
+            'mapper'   => ItemMapper::class,
+            'table'    => 'stocktaking_item',
+            'self'     => 'stocktaking_item_stocktaking',
+            'external' => 'stocktaking_item_item',
         ],
     ];
 

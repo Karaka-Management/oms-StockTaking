@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\StockTaking\Controller;
 
+use Modules\ItemManagement\Models\NullItem;
 use Modules\StockTaking\Models\StockTaking;
 use Modules\StockTaking\Models\StockTakingMapper;
 use Modules\WarehouseManagement\Models\NullStock;
@@ -58,9 +59,9 @@ final class ApiController extends Controller
             return;
         }
 
-        $paymentTerm = $this->createStockTakingFromRequest($request);
-        $this->createModel($request->header->account, $paymentTerm, StockTakingMapper::class, 'stocktaking', $request->getOrigin());
-        $this->createStandardCreateResponse($request, $response, $paymentTerm);
+        $stockTaking = $this->createStockTakingFromRequest($request);
+        $this->createModel($request->header->account, $stockTaking, StockTakingMapper::class, 'stocktaking', $request->getOrigin());
+        $this->createStandardCreateResponse($request, $response, $stockTaking);
     }
 
     /**
@@ -127,7 +128,9 @@ final class ApiController extends Controller
 
             if (empty($stockTypeList)) {
                 foreach ($stock->locations as $location) {
-                    $stockTypeList[] = $location->type->id;
+                    if ($location->type->id !== 0) {
+                        $stockTypeList[$location->type->id] = $location->type->id;
+                    }
                 }
             }
 
@@ -149,10 +152,17 @@ final class ApiController extends Controller
 
         // @todo In the future create create a snapshot of distributions and reference those
         //      This would also allow us to continue creating bills while doing the stocktaking?
+
+        // @todo Limit items if items are defined
         $stocktaking->distributions = StockDistributionMapper::getAll()
             ->where('stock', $stockList)
             ->where('stockType', $stockTypeList)
             ->executeGetArray();
+
+        // @bug This doesn't include items that never had a distribution created
+        foreach ($stocktaking->distributions as $distribution) {
+            $stocktaking->items[$distribution->item] = new NullItem($distribution->item);
+        }
 
         return $stocktaking;
     }
