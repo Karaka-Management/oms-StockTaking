@@ -73,16 +73,16 @@ omsApp.Modules.StockTaking = class {
                             }
                         });
 
-                        if ("zoom" in self.settings) {
-                            self.zoom.min = self.capabilities.zoom.min;
-                            self.zoom.max = self.capabilities.zoom.max;
-                            self.zoom.step = self.capabilities.zoom.step;
-                            self.zoom.value = self.settings.zoom;
+                if ("zoom" in self.settings) {
+                    self.zoom.min = self.capabilities.zoom.min;
+                    self.zoom.max = self.capabilities.zoom.max;
+                    self.zoom.step = self.capabilities.zoom.step;
+                    self.zoom.value = self.settings.zoom;
 
-                            self.zoom.addEventListener("input", async () => {
-                                await self.track.applyConstraints({ advanced: [{ zoom: self.input.value }] });
-                            });
-                        }
+                    self.zoom.addEventListener("input", async () => {
+                        await self.track.applyConstraints({ advanced: [{ zoom: self.input.value }] });
+                    });
+                }
                     });
             } else {
                 self.detectVideo(false);
