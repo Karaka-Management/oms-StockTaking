@@ -90,7 +90,7 @@ final class BackendController extends Controller
             ->with('items/files')
             ->with('items/files/tags')
             ->with('distributions')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->where('items/l11n/language', $response->header->l11n->language)
             ->where('item/sl11n/type/title', ['name1', 'name2'], 'IN')
             ->where('items/files/tags/name', 'profile_image')
